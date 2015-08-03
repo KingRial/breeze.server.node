@@ -10,11 +10,8 @@ EntityQuery.fromUrl = function(url, resourceName ) {
   var parsedUrl = urlUtils.parse(url, true);
   var resourceName =  resourceName || parsedUrl.pathname;
 
-  // this is because everything after the '?' is turned into a query object with a single key
-  // where the key is the value of the string after the '?" and with a 'value' that is an empty string.
-  // So we want the key and not the value.
-  var jsonQueryString = Object.keys(parsedUrl.query)[0];
-  var jsonQuery = JSON.parse(jsonQueryString);
+  var jsonQuery = JSON.stringify( parsedUrl.query );
+  entityQuery = new EntityQuery( parsedUrl.query );
 
   entityQuery = new EntityQuery(jsonQuery);
   entityQuery = entityQuery.from(resourceName).useNameOnServer(true);
@@ -819,6 +816,3 @@ var _notOps = {
 //  return Object.getPrototypeOf(o).constructor == Sequelize.Utils.or;
 //}
 // --------------------------------
-
-
-

@@ -7,10 +7,10 @@
   "dependencies": {
     "bluebird": "^2.3.2",
     "breeze-client": "*",
-    "lodash": "^2.4.1",
+    "lodash": "^3.9.3",
     "mysql": "^2.4.3",
     "node-uuid": "^1.4.1",
-    "sequelize": "^2.0.0-rc2",
+    "sequelize": "^3.3.2",
     "toposort": "^0.2.10"
   },
   "devDependencies": {
